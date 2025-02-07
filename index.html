@@ -115,7 +115,8 @@
             }
             const retenciones = isr + isss + afp;
             const sueldoNeto = rentaI - isr;
-            const isssPatronal = sueldo * 0.075;
+            let isssPatronal = sueldo * 0.075;
+            if (isssPatronal > 75) isssPatronal = 75;
             const afpPatronal = sueldo * 0.0875;
             document.getElementById('resultado-afp').textContent = `$${afp.toFixed(2)}`;
             document.getElementById('resultado-isss').textContent = `$${isss.toFixed(2)}`;
